@@ -4,12 +4,12 @@ from oauth2client.service_account import ServiceAccountCredentials
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
 
-# 🔐 Подключение к Google Таблице
+#  Подключение к Google Таблице
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("podarki-457609-10752258b8f6.json", scope)
 client = gspread.authorize(creds)
 
-# ⚙️ Открываем таблицу
+#  Открываем таблицу
 SPREADSHEET_NAME = "Учет подарков"
 sheet = client.open(SPREADSHEET_NAME).sheet1
 
